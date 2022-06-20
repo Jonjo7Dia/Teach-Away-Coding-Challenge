@@ -3,10 +3,10 @@ import { createSlice} from '@reduxjs/toolkit';
 const filterSlice = createSlice({
     name: 'filter',
     initialState : {
-        section: 'Hot',
-        sort: 'Viral',
+        section: 'hot',
+        sort: 'viral',
         page: 0,
-        window: 'Day',
+        window: 'day',
         showViral: true, 
         loading: true,
 

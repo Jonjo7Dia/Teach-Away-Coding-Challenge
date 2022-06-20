@@ -1,6 +1,6 @@
 .navOptions {
     height: 100%;
-    width: 50%;
+    width: 70%;
     background-color: #9FA9BF;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -17,6 +17,9 @@
  }
  .navHeading {
      text-transform: uppercase;
+     width: 25%;
+     display: flex;
+     justify-content: center;
     
  }
  .options {
