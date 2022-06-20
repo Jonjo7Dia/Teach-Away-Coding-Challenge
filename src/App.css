@@ -4,8 +4,14 @@
     margin: 0;
     padding: 0;
 }
+#root{
+    height: 100%;
+}
 body {
     background-color: #3D4B6F;
     font-family: 'Roboto', sans-serif;
-
+    height: 100vh;
+}
+.App {
+    height: 100%;
 }
