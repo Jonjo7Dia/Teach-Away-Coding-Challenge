@@ -3,12 +3,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    user-select: none;
+    -webkit-user-drag: none;
 }
-#root{
-    height: 100%;
-}
+
 body {
-    background-color: #3D4B6F;
+    background-color: #474a51;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
 }

@@ -1,0 +1,51 @@
+.imageCard {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 10px;
+    max-height: 300px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgb(0, 0, 0) 0px 3px 7px -3px;
+}
+.media {
+    width: 100%;
+    height: calc(100% - 70px);
+}
+.media img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.media video{
+    max-width: 100%;
+    max-height: 100%;
+}
+.description {
+    width: 100%;
+    height: 70px;
+    background-color: #474a51;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.description h4{
+    font-family: 'Roboto';
+    font-weight: 100;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
