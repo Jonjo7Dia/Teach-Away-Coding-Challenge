@@ -26,6 +26,9 @@ const filterSlice = createSlice({
         },
         setViral(state, action){
             state.showViral = action.payload;
+        },
+        setLoading(state, action){
+            state.loading = action.payload;
         }
     }
 });
