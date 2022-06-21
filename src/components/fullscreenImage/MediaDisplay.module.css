@@ -1,0 +1,23 @@
+.videoView, .imageView {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.videoView {
+    height: 100%;
+}
+.videoView video {
+    max-height: 100%;
+    max-width: 100%;
+}
+.imageView {
+    max-height: 100%;
+    overflow-y: scroll;
+
+
+}
+.imageView img {
+    height: 100%;
+    max-width: 95%;
+}
+

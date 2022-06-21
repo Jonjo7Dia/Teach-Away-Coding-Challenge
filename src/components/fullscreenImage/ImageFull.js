@@ -1,7 +1,13 @@
 import classes from "./ImageFull.module.css";
-import PostBody from './PostBody'
-function ImageFull() {
-    return <div className={classes.overlay}><PostBody/></div>
+import PostBody from "./PostBody";
+function ImageFull(props) {
+  return (
+    <div className={classes.overlay} onClick={()=>{
+        props.close();
+    }}>
+      <PostBody info={props.info} type={props.type} link={props.link} />
+    </div>
+  );
 }
 
 export default ImageFull;

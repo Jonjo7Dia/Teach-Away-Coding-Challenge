@@ -17,11 +17,17 @@ const ImageCard = (props) => {
       link = content.link;
     }
   }
+  function overlayHandler(){
+    setShowImage(false);
+    console.log(showImage);
+  }
   return (
     <div
       className={classes.imageCard}
       onClick={()=>{
-        setShowImage(true);
+        if (!mediaInfo.loading){
+          setShowImage(true);
+        }
       }}
     >
       {mediaInfo.loading && <div className={classes.loadingMedia}></div>}
@@ -40,7 +46,7 @@ const ImageCard = (props) => {
           <h4>{content.title}</h4>
         </div>
       )}
-      {showImage && <ImageFull />}
+      {showImage && <ImageFull info ={content} type={type} link={link} close={overlayHandler}/>}
     </div>
   );
 };
