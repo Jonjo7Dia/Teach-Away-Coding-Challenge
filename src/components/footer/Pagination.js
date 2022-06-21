@@ -5,7 +5,6 @@ import { mediaActions } from "../../store/media-slice";
 function Pagination() {
   const dispatch = useDispatch();
   const filter = useSelector((state) => state.filter);
-  console.log(filter.page);
   return (
     <div className={classes.pageControls}>
       <div className={classes.pagination}>

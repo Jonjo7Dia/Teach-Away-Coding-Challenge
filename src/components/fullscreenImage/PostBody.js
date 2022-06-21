@@ -4,13 +4,6 @@ function PostBody(props){
 
     //details: big image, title, description, upvotes, downvotes and score
      const {ups, downs, score, title, description} = props.info;
-
-     console.log(ups);
-     console.log(downs);
-     console.log(score);
-     console.log(title);
-     console.log(description);
-     console.log(props.type);
     return <div className={classes.post}>
         <div className={classes.imageScore}>
             <div className={classes.media}>
