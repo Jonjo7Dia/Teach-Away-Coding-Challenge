@@ -1,9 +1,13 @@
 import classes from "./NavOptions.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { filterActions } from "../../store/filter-slice";
+import { mediaActions } from "../../store/media-slice";
 const NavOptions = () => {
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
+  const loadHandler = () => {
+    dispatch(mediaActions.setLoading(true));
+  };
   return (
     <div className={classes.filterOptions}>
       <form
@@ -18,6 +22,7 @@ const NavOptions = () => {
           defaultValue={filter.section.toUpperCase()}
           onChange={(e) => {
             dispatch(filterActions.setSection(e.target.value));
+            loadHandler();
           }}
         >
           <option value="hot">Hot</option>
@@ -30,9 +35,10 @@ const NavOptions = () => {
           defaultValue={filter.sort.toUpperCase()}
           onChange={(e) => {
             if (e.target.value !== "top") {
-              dispatch(filterActions.setWindow('day'));
+              dispatch(filterActions.setWindow("day"));
             }
             dispatch(filterActions.setSort(e.target.value));
+            loadHandler();
           }}
         >
           <option value="viral">Viral</option>
@@ -47,6 +53,7 @@ const NavOptions = () => {
             defaultValue={filter.window.toUpperCase()}
             onChange={(e) => {
               dispatch(filterActions.setWindow(e.target.value));
+              loadHandler();
             }}
           >
             <option value="day">Day</option>

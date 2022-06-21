@@ -1,26 +1,28 @@
 .imageCard {
-    width: 100%;
-    height: 250px;
+    width: 240px;
     margin-bottom: 10px;
     margin-top: 10px;
-    max-height: 300px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgb(0, 0, 0) 0px 3px 7px -3px;
+
+}
+.loadingMedia {
+    width: 100%;
+    border-radius: 5px;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 1s ease infinite;
-    border-radius: 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgb(0, 0, 0) 0px 3px 7px -3px;
 }
 .media {
     width: 100%;
-    height: calc(100% - 70px);
 }
 .media img{
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 450px;
+
 }
 .media video{
     max-width: 100%;
-    max-height: 100%;
 }
 .description {
     width: 100%;
@@ -37,6 +39,12 @@
 .description h4{
     font-family: 'Roboto';
     font-weight: 100;
+    text-align: center;
+    max-height: 50px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap
 }
 
 @keyframes gradient {
