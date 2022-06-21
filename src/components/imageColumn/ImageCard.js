@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
 import classes from "./ImageCard.module.css";
-
+import ImageFull from '../fullscreenImage/ImageFull';
+import { useState } from "react";
 const ImageCard = (props) => {
+  const[showImage, setShowImage]= useState(false);
   const mediaInfo = useSelector((state) => state.media);
   const content = props.content;
   let link;
@@ -18,6 +20,9 @@ const ImageCard = (props) => {
   return (
     <div
       className={classes.imageCard}
+      onClick={()=>{
+        setShowImage(true);
+      }}
     >
       {mediaInfo.loading && <div className={classes.loadingMedia}></div>}
       {!mediaInfo.loading && (
@@ -27,7 +32,7 @@ const ImageCard = (props) => {
               <source src={link} type="video/mp4" />
             </video>
           )}
-          {type.includes("image") && <img src={link} />}
+          {type.includes("image") && <img src={link} alt={content.title}/>}
         </div>
       )}
       {!mediaInfo.loading && (
@@ -35,6 +40,7 @@ const ImageCard = (props) => {
           <h4>{content.title}</h4>
         </div>
       )}
+      {showImage && <ImageFull />}
     </div>
   );
 };

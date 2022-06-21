@@ -1,0 +1,40 @@
+.post {
+    width: 20rem;
+    height: 35rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.imageScore{
+    width: 100%;
+    height: 28rem;
+    border-bottom: solid black 1px;
+    display: flex;
+    flex-direction: column;
+}
+.media {
+    width: 100%;
+    height: 24rem;
+    border-bottom: solid black 1px;
+}
+
+
+@media only screen and (min-width: 800px){
+    .post{
+        width: 760px;
+        
+    }
+    .imageScore{
+        width: 100%;
+        height: 28rem;
+        border-bottom: solid black 1px;
+        display: flex;
+        flex-direction: row;
+    }
+    .media {
+        height: 100%;
+        width: 670px;
+        border-right: solid black 1px;
+        border-bottom: none;
+    }
+}
