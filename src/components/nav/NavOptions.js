@@ -21,6 +21,7 @@ const NavOptions = () => {
           id=""
           defaultValue={filter.section.toUpperCase()}
           onChange={(e) => {
+            dispatch(filterActions.setViral(true));
             dispatch(filterActions.setSection(e.target.value));
             loadHandler();
           }}

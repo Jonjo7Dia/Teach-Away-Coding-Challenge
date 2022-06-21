@@ -21,7 +21,10 @@ const filterSlice = createSlice({
       state.window = action.payload;
     },
     setViral(state, action) {
-      state.showViral = action.payload;
+      return {
+        ...state,
+        showViral: action.payload,
+      }
     },
     setLoading(state, action) {
       state.loading = action.payload;

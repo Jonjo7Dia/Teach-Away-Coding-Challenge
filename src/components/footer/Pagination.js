@@ -14,24 +14,29 @@ function Pagination() {
             if (filter.page >= 1) {
               dispatch(filterActions.prevPage());
               dispatch(mediaActions.setLoading(true));
+              window.scrollTo(0,0);
             }
           }}
         >
           ❮
         </button>
       </div>
-      <div className={classes.virality}>
+     {filter.section === 'user' && <div className={classes.virality}>
         <div className={classes.label}>Show Viral</div>
         <div className={classes.chooser}>
           <label className={classes.switch}>
-            <input type="checkbox" />
+            <input type="checkbox"  defaultChecked={filter.showViral} onChange={(e)=>{
+              dispatch(filterActions.setViral(e.target.checked));
+              dispatch(mediaActions.setLoading(true));
+            }}/>
             <span className={classes.slider}></span>
           </label>
         </div>
-      </div>
+      </div>}
       <div className={classes.pagination}>
         <button
           onClick={() => {
+            window.scrollTo(0,0);
             dispatch(filterActions.nextPage());
             dispatch(mediaActions.setLoading(true));
           }}
