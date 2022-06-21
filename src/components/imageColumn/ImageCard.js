@@ -14,14 +14,10 @@ const ImageCard = (props) => {
       type = content.type;
       link = content.link;
     }
-    console.log(content.images);
   }
   return (
     <div
       className={classes.imageCard}
-      onClick={() => {
-        console.log(content);
-      }}
     >
       {mediaInfo.loading && <div className={classes.loadingMedia}></div>}
       {!mediaInfo.loading && (
