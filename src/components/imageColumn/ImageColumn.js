@@ -1,24 +1,41 @@
-import ImageCard from './ImageCard';
+import ImageCard from "./ImageCard";
 import { useSelector } from "react-redux";
-
+import Masonry from "react-masonry-css";
+import classes from "./ImageColumn.module.css";
 const ImageColumn = (props) => {
-  const media= useSelector((state) => state.media);
-  const position = props.position * 15;
-  let data;
-
-  if(!media.loading){
-    data = media.data.slice(position, position + 15);
-    return data.map(index => {
-        return <ImageCard key={index.id} content= {index}></ImageCard>
-    });
+  const media = useSelector((state) => state.media);
+  const breakpoints = {
+    default: 5,
+    1500: 4,
+    1200: 3,
+    1100: 2,
+    700: 1,
+  };
+  if (!media.loading) {
+    return (
+      <Masonry
+        breakpointCols={breakpoints}
+        className={classes.myMasonryGrid}
+        columnClassName={classes.myMasonryGridColumn}
+      >
+        {media.data.map((index) => {
+          return <ImageCard key={index.id} content={index}></ImageCard>;
+        })}
+      </Masonry>
+    );
+  } else {
+    return (
+      <Masonry
+        breakpointCols={breakpoints}
+        className={classes.myMasonryGrid}
+        columnClassName={classes.myMasonryGridColumn}
+      >
+        {props.data.map((content, index) => {
+          return <ImageCard key={index} content={content}></ImageCard>;
+        })}
+      </Masonry>
+    );
   }
-  else {
-    return props.data.map(index => {
-        return <ImageCard key={index}></ImageCard>
-    });
-  }
-
-   
-}
+};
 
 export default ImageColumn;

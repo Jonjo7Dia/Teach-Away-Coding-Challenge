@@ -7,7 +7,7 @@ import { httpGetMedia } from "../../hooks/requests";
 
 const ViewResults = () => {
   const dispatch = useDispatch();
-  const arr = [1,2,3,4,5,6];
+  const arr = new Array(60).fill('random');
   const filter = useSelector((state) => state.filter);
   const getMedia = useCallback(async () => {
     const fetchedMedia = await httpGetMedia(
@@ -27,19 +27,7 @@ const ViewResults = () => {
   return (
     <div className={classes.results}>
       <div className={classes.imageColumn}>
-        <ImageColumn data={arr} position={0}/>
-      </div>
-      <div className={classes.imageColumn}>
-        <ImageColumn data={arr} position={1}/>
-
-      </div>
-      <div className={classes.imageColumn}>
-        <ImageColumn data={arr} position={2}/>
-
-      </div>
-      <div className={classes.imageColumn}>
-        <ImageColumn data={arr} position={3}/>
-
+        <ImageColumn data={arr}/>
       </div>
     </div>
   );

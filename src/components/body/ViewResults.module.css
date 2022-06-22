@@ -1,14 +1,13 @@
 .results {
     width: 85%;
     height: 100%;
-    border: solid white 1px;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: space-around;
+
+    margin-top: 4rem;
 }
 
 .imageColumn{
-    width: 240px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
 }

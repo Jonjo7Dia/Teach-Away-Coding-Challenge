@@ -1,7 +1,6 @@
 .pageControls {
     width: 85%;
     height: 100%;
-    border: solid white 1px;
     display: flex;
     justify-content: space-around;
 }
