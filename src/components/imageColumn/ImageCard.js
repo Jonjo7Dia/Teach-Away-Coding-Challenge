@@ -50,8 +50,8 @@ const ImageCard = (props) => {
           info={content}
           type={type}
           link={link}
-          close={() => {
-            setShowImage(false);
+          close={(value) => {
+            setShowImage(value);
           }}
         />
       )}

@@ -3,9 +3,9 @@ import PostBody from "./PostBody";
 function ImageFull(props) {
   return (
     <div className={classes.overlay} onClick={()=>{
-        props.close();
+        props.close(false);
     }}>
-      <PostBody info={props.info} type={props.type} link={props.link} />
+      <PostBody info={props.info} type={props.type} link={props.link}  />
     </div>
   );
 }

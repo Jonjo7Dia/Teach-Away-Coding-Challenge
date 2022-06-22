@@ -1,34 +1,42 @@
 .post {
     width: 20rem;
-    height: 35rem;
+    height: 32rem;
     background-color: #474a51;
     display: flex;
     flex-direction: column;
+    border-radius: 12px;
 }
 .imageScore{
     width: 100%;
-    height: 28rem;
+    height: 24rem;
     border-bottom: solid white 1px;
     display: flex;
     flex-direction: column;
 }
 .media {
     width: 100%;
-    height: 24rem;
+    height: 20rem;
     display: flex;
     align-items: center;
     border-bottom: solid white 1px;
+}
+.score {
+    width: 100%;
+    height: 4rem;
+}
+.descriptionTitle{
+    height: 100%;
 }
 
 
 @media only screen and (min-width: 800px){
     .post{
         width: 760px;
-        
+        height: 98%;
     }
     .imageScore{
         width: 100%;
-        height: 28rem;
+        height: 85%;
         border-bottom: solid white 1px;
         display: flex;
         flex-direction: row;
@@ -38,5 +46,12 @@
         width: 670px;
         border-right: solid white 1px;
         border-bottom: none;
+    }
+    .score {
+        height: 100%;
+        width: 110px;
+    }
+    .descriptionTitle{
+        height: 15%;
     }
 }
