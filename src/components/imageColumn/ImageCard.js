@@ -4,6 +4,7 @@ import ImageFull from "../fullscreenImage/ImageFull";
 import { useState } from "react";
 const ImageCard = (props) => {
   const [showImage, setShowImage] = useState(false);
+  const [loading, setLoading] = useState(true);
   const mediaInfo = useSelector((state) => state.media);
   const content = props.content;
   let link;
@@ -29,10 +30,26 @@ const ImageCard = (props) => {
         >
           {type.includes("video") && (
             <video playsInline autoPlay muted loop>
-              <source src={link} type="video/mp4" />
+              <source
+                src={link}
+                type="video/mp4"
+                onLoad={() => {
+                  setLoading(false);
+                }}
+              />
+              {loading && <div className={classes.loadingMedia}> </div>}
             </video>
           )}
-          {type.includes("image") && <img src={link} alt={content.title} />}
+          {type.includes("image") && (
+            <img
+              src={link}
+              alt={content.title}
+              onLoad={() => {
+                setLoading(false);
+              }}
+            />
+          )}
+          {loading && <div className={classes.loadingMedia}> </div>}
         </div>
       )}
       {!mediaInfo.loading && (

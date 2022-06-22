@@ -1,7 +1,6 @@
 import classes from "./MediaDisplay.module.css";
 
 function MediaDisplay(props){
-    console.log(props.link);
     if(props.type.includes('video')){
         return <div className={classes.videoView}>
             <video src={props.link} type={props.type} playsInline controls autoPlay loop></video>
