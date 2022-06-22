@@ -17,8 +17,14 @@ const ViewResults = () => {
       filter.page,
       filter.showViral
     );
-    dispatch(mediaActions.setData(fetchedMedia.data));
-    dispatch(mediaActions.setLoading(false));
+    if(fetchedMedia.success){
+      dispatch(mediaActions.setData(fetchedMedia.data));
+      dispatch(mediaActions.setLoading(false));
+    }
+    else {
+      dispatch(mediaActions.setError(fetchedMedia));
+    }
+    
   }, [filter]);
   useEffect(() => {
     getMedia();

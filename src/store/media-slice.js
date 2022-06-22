@@ -5,6 +5,11 @@ const mediaSlice = createSlice({
     initialState : {
         data : [],
         loading: true,
+        error: {
+            success: true, 
+            message: '',
+            number: 200,
+        }
     },
     reducers : {
         setData(state, action){
@@ -12,6 +17,13 @@ const mediaSlice = createSlice({
         },
         setLoading(state, action){
             state.loading = action.payload;
+        },
+        setError(state, action){
+            state.error = {
+                success: action.payload.success,
+                message: action.payload.data.error,
+                number: action.payload.status
+            }
         }
     }
 })
