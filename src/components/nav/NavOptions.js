@@ -11,12 +11,6 @@ const NavOptions = () => {
   };
   return (
     <div className={classes.filterOptions}>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-        className={classes.filterForm}
-      >
         <DropDownMenus />
         <div className={classes.virality}>
           <div className={classes.label}>Show Viral</div>
@@ -34,7 +28,6 @@ const NavOptions = () => {
             </label>
           </div>
         </div>
-      </form>
     </div>
   );
 };

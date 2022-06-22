@@ -66,7 +66,7 @@ function DropDownMenus() {
             }}
             className={classes.dropdownListItem}
             onClick={() => {
-              dispatchSort("Time");
+              dispatchSort("time");
             }}
           >
             Time

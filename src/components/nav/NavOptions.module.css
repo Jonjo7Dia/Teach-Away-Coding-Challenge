@@ -1,8 +1,5 @@
 .filterOptions {
     width: 100%;
-}
-.filterOptions form {
-    width: 100%;
     display: flex;
     
     flex-direction: row;
@@ -11,6 +8,7 @@
     justify-content: space-around;
     align-items: center;
 }
+
 .switch {
     position: relative;
     display: inline-block;
