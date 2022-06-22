@@ -25,7 +25,7 @@ const ViewResults = () => {
       dispatch(mediaActions.setError(fetchedMedia));
     }
     
-  }, [filter]);
+  }, [filter,dispatch]);
   useEffect(() => {
     getMedia();
   }, [getMedia]);

@@ -6,9 +6,6 @@ import DropDownMenus from './DropDownMenus';
 const NavOptions = () => {
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
-  const loadHandler = () => {
-    dispatch(mediaActions.setLoading(true));
-  };
   return (
     <div className={classes.filterOptions}>
         <DropDownMenus />
