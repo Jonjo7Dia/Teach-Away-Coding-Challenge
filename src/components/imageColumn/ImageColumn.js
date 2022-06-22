@@ -8,7 +8,7 @@ const ImageColumn = (props) => {
     default: 5,
     1500: 4,
     1200: 3,
-    1100: 2,
+    900: 2,
     700: 1,
   };
   if (!media.loading) {
