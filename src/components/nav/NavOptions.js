@@ -21,7 +21,6 @@ const NavOptions = () => {
           id=""
           defaultValue={filter.section.toUpperCase()}
           onChange={(e) => {
-            dispatch(filterActions.setViral(true));
             dispatch(filterActions.setSection(e.target.value));
             loadHandler();
           }}
@@ -35,9 +34,6 @@ const NavOptions = () => {
           id=""
           defaultValue={filter.sort.toUpperCase()}
           onChange={(e) => {
-            if (e.target.value !== "top") {
-              dispatch(filterActions.setWindow("day"));
-            }
             dispatch(filterActions.setSort(e.target.value));
             loadHandler();
           }}
@@ -47,23 +43,38 @@ const NavOptions = () => {
           <option value="time">Time</option>
           {filter.section === "user" && <option value="rising">Rising</option>}
         </select>
-        {filter.sort === "top" && (
-          <select
-            name="window"
-            id=""
-            defaultValue={filter.window.toUpperCase()}
-            onChange={(e) => {
-              dispatch(filterActions.setWindow(e.target.value));
-              loadHandler();
-            }}
-          >
-            <option value="day">Day</option>
-            <option value="week">Week</option>
-            <option value="month">Month</option>
-            <option value="year">Year</option>
-            <option value="all">All</option>
-          </select>
-        )}
+
+        <select
+          name="window"
+          id=""
+          defaultValue={filter.window.toUpperCase()}
+          onChange={(e) => {
+            dispatch(filterActions.setWindow(e.target.value));
+            loadHandler();
+          }}
+        >
+          <option value="day">Day</option>
+          <option value="week">Week</option>
+          <option value="month">Month</option>
+          <option value="year">Year</option>
+          <option value="all">All</option>
+        </select>
+        <div className={classes.virality}>
+          <div className={classes.label}>Show Viral</div>
+          <div className={classes.chooser}>
+            <label className={classes.switch}>
+              <input
+                type="checkbox"
+                defaultChecked={filter.showViral}
+                onChange={(e) => {
+                  dispatch(filterActions.setViral(e.target.checked));
+                  dispatch(mediaActions.setLoading(true));
+                }}
+              />
+              <span className={classes.slider}></span>
+            </label>
+          </div>
+        </div>
       </form>
     </div>
   );

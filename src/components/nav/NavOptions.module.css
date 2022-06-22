@@ -1,20 +1,116 @@
 .filterOptions {
     width: 100%;
-    height: 100%;
 }
 .filterOptions form {
     width: 100%;
-    height: 100%;
     display: flex;
+    
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: space-around;
+    align-items: center;
 }
 .filterOptions select {
+    height: 3rem;
+    width: 6rem;
+    background-color: transparent;
     font-size: 24px;
     background-color: none;
     border: none;
     outline: none;
-    color: #777;
+    color: black;
     font-family: 'Roboto';
     font-weight: 300;
+    border-bottom: solid 2px black;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+ 
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    user-select: none;
+
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  input::selection{
+      background-color: none;
+  }
+  
+  input:checked + .slider {
+    background-color: rgb(235, 117, 127);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px rgb(235, 117, 127);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .slider {
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    border-radius: 50%;
+  }
+
+  .virality {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 3rem;
+    width: 14rem;
+    color: black;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 24px;
+}
+.label{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chooser{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
